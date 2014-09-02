@@ -34,3 +34,13 @@ app.config(
         }
     ]
 );
+
+app.config(['markedProvider', function (markedProvider) {
+    markedProvider.setOptions({
+        gfm: true,
+        tables: true,
+        highlight: function (code) {
+            return hljs.highlightAuto(code).value;
+        }
+    });
+}]);
