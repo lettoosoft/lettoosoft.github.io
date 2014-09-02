@@ -1943,3 +1943,15 @@ body:not(.post-template) .post-title {
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+nav.category {
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: 'Open Sans';
+}
+
+nav.category a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: #9EABB3;
+}

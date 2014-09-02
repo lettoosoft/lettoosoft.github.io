@@ -22,7 +22,7 @@
 
 <header class="main-header no-cover">
     <nav class="main-nav overlay clearfix">
-        <!--<a class="subscribe-button" href>About</a>-->
+
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -31,6 +31,10 @@
             </h1>
 
             <h2 class="page-description">{{app.sub_title}}</h2>
+
+            <nav class="category">
+                <a ng-repeat="category in category_list | orderBy:'-count'" href="#/category/{{category.title}}">{{category.title}} ({{category.count}})</a>
+            </nav>
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>

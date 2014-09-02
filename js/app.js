@@ -28,6 +28,9 @@ app.config(
                 .when('/author/:author', {
                     templateUrl: 'tpl/blog_list.html'
                 })
+                .when('/category/:category', {
+                    templateUrl: 'tpl/blog_list.html'
+                })
                 .otherwise({
                     redirectTo: '/'
                 });

@@ -3,12 +3,16 @@
 /* Controllers */
 
 angular.module('app.controllers', [])
-    .controller('AppCtrl', ['$scope', function ($scope) {
+    .controller('AppCtrl', ['$scope', 'blogService', function ($scope, blogService) {
         $scope.app = {
             title: 'Lettoo',
             sub_title: 'Thoughts, stories and ideas.',
             web_url: '//lettoosoft.github.io'
         };
+
+        blogService.get_category_list().then(function(category_list){
+            $scope.category_list = category_list;
+        });
     }])
 
     .controller('BlogListCtrl', ['$scope', '$routeParams', '$rootScope', 'blogService',
@@ -16,24 +20,26 @@ angular.module('app.controllers', [])
             $rootScope.detail = false;
             var tag = $routeParams.tag;
             var author = $routeParams.author;
+            var category = $routeParams.category;
 
             $scope.itemsPerPage = 5;
             $scope.currentPage = 0;
 
             if (tag) {
-                blogService.get_blog_list().success(function (data, status, headers, config) {
-                    blogService.blog_list = data;
-                    $scope.blog_list = blogService.get_tag_blog_list(tag);
+                blogService.get_tag_blog_list(tag).then(function(blog_list){
+                    $scope.blog_list = blog_list;
                 });
             } else if (author) {
-                blogService.get_blog_list().success(function (data, status, headers, config) {
-                    blogService.blog_list = data;
-                    $scope.blog_list = blogService.get_author_blog_list(author);
+                blogService.get_author_blog_list(author).then(function(blog_list){
+                    $scope.blog_list = blog_list;
+                });
+            } else if (category) {
+                blogService.get_category_blog_list(category).then(function(blog_list){
+                    $scope.blog_list = blog_list;
                 });
             } else {
-                blogService.get_blog_list().success(function (data, status, headers, config) {
-                    blogService.blog_list = data;
-                    $scope.blog_list = blogService.blog_list;
+                blogService.get_blog_list().then(function (blog_list) {
+                    $scope.blog_list = blog_list;
                 });
             }
 
@@ -72,14 +78,9 @@ angular.module('app.controllers', [])
             $rootScope.detail = true;
             var slug = $routeParams.slug;
 
-            if (blogService.blog_list == undefined) {
-                blogService.get_blog_list().success(function (data, status, headers, config) {
-                    blogService.blog_list = data;
-                    $scope.blog = blogService.get_blog(slug);
-                });
-            } else {
-                $scope.blog = blogService.get_blog(slug);
-            }
+            blogService.get_blog(slug).then(function(blog){
+                $scope.blog = blog;
+            });
 
             $scope.content_md_url = function (blog) {
                 if (blog) {

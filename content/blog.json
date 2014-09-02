@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "category": "",
+        "category": "杂项",
         "title": "Hello World",
         "slug": "hello-world",
         "author": {
@@ -18,7 +18,7 @@
     },
     {
         "id": 2,
-        "category": "",
+        "category": "做事",
         "title": "另一个折腾",
         "slug": "another-blog",
         "author": {
@@ -35,7 +35,7 @@
     },
     {
         "id": 3,
-        "category": "",
+        "category": "做事",
         "title": "Angular前端分页简单实现",
         "slug": "angular-client-pagination",
         "author": {
@@ -52,7 +52,7 @@
     },
     {
         "id": 4,
-        "category": "",
+        "category": "做人",
         "title": "每周工作4小时",
         "slug": "the-4-hours-workweek",
         "author": {
