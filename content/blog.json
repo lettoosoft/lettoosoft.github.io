@@ -14,5 +14,21 @@
         "post_date": "2014-09-02",
         "summary": "A new blog",
         "content_md_url": "content/20140902/helloworld.md"
+    },
+    {
+        "category": "",
+        "title": "另一个折腾",
+        "slug": "another-blog",
+        "author": {
+            "slug":"jeffrey-hu",
+            "name": "Jeffrey Hu",
+            "avatar_url": "//www.gravatar.com/avatar/b02772de5f241e1ead0d812d6d63b57b?d=404&amp;s=250",
+            "email": "zhiwehu@gmail.com",
+            "link": "//github.com/zhiwehu"
+        },
+        "tags": ["angular", "github"],
+        "post_date": "2014-09-02",
+        "summary": "昨天半夜时分，突然觉得用angular做一个全静态的blog部署在github.io上，是一件有必要做的事情，总体的想法是....",
+        "content_md_url": "content/20140902/another_blog.md"
     }
 ]
