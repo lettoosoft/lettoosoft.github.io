@@ -19,10 +19,27 @@
     <link rel="canonical" href="{{app.web_url}}"/>
 </head>
 <body ng-class="{'post-template':detail, 'home-template':!detail}">
+
+<header class="main-header no-cover">
+    <nav class="main-nav overlay clearfix">
+        <!--<a class="subscribe-button" href>About</a>-->
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">
+                {{app.title}}
+            </h1>
+
+            <h2 class="page-description">{{app.sub_title}}</h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
 <div ng-view></div>
 
 <footer class="site-footer clearfix">
-    <section class="copyright"><a href="{{app.web_url}}">{{app.title}}</a> &copy; 2014</section>
+    <section class="copyright"><a href="/">{{app.title}}</a> &copy; 2014</section>
     <section class="poweredby">Proudly published with <a href="{{app.web_url}}">{{app.title}}</a></section>
 </footer>
 
