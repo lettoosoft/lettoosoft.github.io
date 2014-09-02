@@ -15,9 +15,10 @@
     </div>
 
     <article class="post" ng-repeat="blog in blog_list|
+        orderBy: '-id' |
         offset: currentPage*itemsPerPage |
-        limitTo: itemsPerPage |
-        orderBy: 'id':true">
+        limitTo: itemsPerPage"
+            >
         <header class="post-header">
             <h2 class="post-title">
                 <a href="#/{{blog.slug}}/">{{blog.title}}</a>
