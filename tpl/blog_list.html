@@ -21,24 +21,28 @@
             >
         <header class="post-header">
             <h2 class="post-title">
-                <a href="#/{{blog.slug}}/">{{blog.title}}</a>
+                <a href="#/{{blog.slug}}">{{blog.title}}</a>
             </h2>
         </header>
         <section class="post-excerpt">
             <p>
                 {{blog.summary}}
-                <a class="read-more" href="#/{{blog.slug}}/">&raquo;</a>
+                <a class="read-more" href="#/{{blog.slug}}">&raquo;</a>
             </p>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" ng-src="{{blog.author.avatar_url}}"
                  alt="{{blog.author.name}}" nopin="nopin"/>
-            <a href="#/author/{{blog.author.slug}}/">{{blog.author.name}}</a>
+            <a href="#/author/{{blog.author.slug}}">{{blog.author.name}}</a>
 
-            <span ng-show="blog.tags.length>0">on</span>
+            <span ng-show="blog.tags.length>0" class="post-date">Tags:</span>
             <span ng-repeat="tag in blog.tags">
-                <a href="#/tag/{{tag}}/">{{tag}}</a>&nbsp;
+                <a href="#/tag/{{tag}}">{{tag}}</a>&nbsp;
             </span>
+
+            <span class="post-date">Category:</span>
+
+            <a href="#/category/{{blog.category}}">{{blog.category}}</a>&nbsp;
 
             <time class="post-date" datetime="2014-09-02">{{blog.post_date}}</time>
         </footer>

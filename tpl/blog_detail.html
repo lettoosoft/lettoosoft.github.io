@@ -8,10 +8,13 @@
             <h2 class="post-title">{{blog.title}}</h2>
             <section class="post-meta">
                 <time class="post-date" datetime="{{blog.post_date}}">{{blog.post_date}}</time>
-                <span ng-show="blog.tags.length>0">on</span>
+                <span ng-show="blog.tags.length>0">Tags:</span>
                 <span ng-repeat="tag in blog.tags">
-                    <a href="#/tag/{{tag}}/">{{tag}}</a>&nbsp;
+                    <a href="#/tag/{{tag}}">{{tag}}</a>&nbsp;
                 </span>
+
+                <span>Category:</span>
+                <a href="#/category/{{blog.category}}">{{blog.category}}</a>&nbsp;
             </section>
         </header>
 
