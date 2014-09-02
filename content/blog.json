@@ -32,5 +32,22 @@
         "post_date": "2014-09-02",
         "summary": "昨天半夜时分，突然觉得用angular做一个全静态的blog部署在github.io上，是一件有必要做的事情，总体的想法是....",
         "content_md_url": "content/20140902/another_blog.md"
+    },
+    {
+        "id": 3,
+        "category": "",
+        "title": "Angular前端分页简单实现",
+        "slug": "angular-client-pagination",
+        "author": {
+            "slug":"jeffrey-hu",
+            "name": "Jeffrey Hu",
+            "avatar_url": "//www.gravatar.com/avatar/b02772de5f241e1ead0d812d6d63b57b?d=404&amp;s=250",
+            "email": "zhiwehu@gmail.com",
+            "link": "//github.com/zhiwehu"
+        },
+        "tags": ["angular", "分页", "前端"],
+        "post_date": "2014-09-02",
+        "summary": "假如一个列表的数据不是很多，且变化不是很频繁，我觉得用前端分页还是很方便。尤其是对于一个纯前端的blog来说。",
+        "content_md_url": "content/20140902/angular_client_pagination.md"
     }
 ]
