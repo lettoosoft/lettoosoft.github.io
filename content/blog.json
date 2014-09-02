@@ -49,5 +49,22 @@
         "post_date": "2014-09-02",
         "summary": "假如一个列表的数据不是很多，且变化不是很频繁，我觉得用前端分页还是很方便。尤其是对于一个纯前端的blog来说。",
         "content_md_url": "content/20140902/angular_client_pagination.md"
+    },
+    {
+        "id": 4,
+        "category": "",
+        "title": "Angular前端分页简单实现",
+        "slug": "the-4-hours-workweek",
+        "author": {
+            "slug":"jeffrey-hu",
+            "name": "Jeffrey Hu",
+            "avatar_url": "//www.gravatar.com/avatar/b02772de5f241e1ead0d812d6d63b57b?d=404&amp;s=250",
+            "email": "zhiwehu@gmail.com",
+            "link": "//github.com/zhiwehu"
+        },
+        "tags": ["效率"],
+        "post_date": "2014-09-03",
+        "summary": "每天只工作4小时的可能性有多大？那么，每周只工作4小时的可能性又有多大？",
+        "content_md_url": "content/20140903/the_4_hours_workweek.md"
     }
 ]
