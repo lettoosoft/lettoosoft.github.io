@@ -69,7 +69,7 @@ Filter
 HTML
 ----
 
-```sh
+```html
     <article class="post" ng-repeat="blog in blog_list|
         offset: currentPage*itemsPerPage |
         limitTo: itemsPerPage |
