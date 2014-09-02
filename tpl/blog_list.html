@@ -1,0 +1,74 @@
+<header class="main-header no-cover">
+    <nav class="main-nav overlay clearfix">
+        <a class="blog-logo" href="/">
+            <img src="/img/lettoo-logo1.png" alt="Lettoo"/>
+        </a>
+        <!--<a class="subscribe-button icon-feed" href="http://my-ghost-blog.com/rss/">Subscribe</a>-->
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Lettoo</h1>
+
+            <h2 class="page-description">Thoughts, stories and ideas.</h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+<main id="content" class="content" role="main" ng-controller="BlogListCtrl">
+
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="navigation">
+            <a href class="newer-posts"
+               ng-hide="prevPageDisabled()"
+               ng-click="prevPage()">&larr; Newer Posts
+            </a>
+            <span class="page-number">Page {{currentPage + 1}} of {{ pageCount() }}</span>
+            <a href class="older-posts"
+               ng-hide="nextPageDisabled()"
+               ng-click="nextPage()">Older Posts &rarr;
+            </a>
+        </nav>
+    </div>
+
+    <article class="post" ng-repeat="blog in blog_list|
+        offset: currentPage*itemsPerPage |
+        limitTo: itemsPerPage">
+        <header class="post-header">
+            <h2 class="post-title">
+                <a href="#/{{blog.slug}}/">{{blog.title}}</a>
+            </h2>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                {{blog.summary}}
+                <a class="read-more" href="#/{{blog.slug}}/">&raquo;</a>
+            </p>
+        </section>
+        <footer class="post-meta">
+            <img class="author-thumb" ng-src="{{blog.author.avatar_url}}"
+                 alt="{{blog.author.name}}" nopin="nopin"/>
+            <a href="#/author/{{blog.author.slug}}/">{{blog.author.name}}</a>
+
+            <span ng-show="blog.tags.length>0">on</span>
+            <span ng-repeat="tag in blog.tags">
+                <a href="#/tag/{{tag}}/">{{tag}}</a>&nbsp;
+            </span>
+
+            <time class="post-date" datetime="2014-09-02">{{blog.post_date}}</time>
+        </footer>
+    </article>
+
+    <nav class="pagination" role="navigation">
+        <a href class="newer-posts"
+           ng-hide="prevPageDisabled()"
+           ng-click="prevPage()">&larr; Newer Posts
+        </a>
+        <span class="page-number">Page {{currentPage + 1}} of {{ pageCount() }}</span>
+        <a href class="older-posts"
+           ng-hide="nextPageDisabled()"
+           ng-click="nextPage()">Older Posts &rarr;
+        </a>
+    </nav>
+
+</main>
