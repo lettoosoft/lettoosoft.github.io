@@ -9,6 +9,7 @@ angular.module('app.controllers', [])
 
     .controller('BlogListCtrl', ['$scope', '$routeParams', 'blogService',
         function ($scope, $routeParams, blogService) {
+            $scope.detail = false;
             var tag = $routeParams.tag;
             var author = $routeParams.author;
 
