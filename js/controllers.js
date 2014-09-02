@@ -4,7 +4,11 @@
 
 angular.module('app.controllers', [])
     .controller('AppCtrl', ['$scope', function ($scope) {
-
+        $scope.app = {
+            title: 'Lettoo',
+            sub_title: 'Thoughts, stories and ideas.',
+            web_url: '//lettoosoft.github.io'
+        };
     }])
 
     .controller('BlogListCtrl', ['$scope', '$routeParams', '$rootScope', 'blogService',
