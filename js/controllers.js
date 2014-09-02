@@ -4,12 +4,12 @@
 
 angular.module('app.controllers', [])
     .controller('AppCtrl', ['$scope', function ($scope) {
-        $scope.detail = false;
+
     }])
 
-    .controller('BlogListCtrl', ['$scope', '$routeParams', 'blogService',
-        function ($scope, $routeParams, blogService) {
-            $scope.detail = false;
+    .controller('BlogListCtrl', ['$scope', '$routeParams', '$rootScope', 'blogService',
+        function ($scope, $routeParams, $rootScope, blogService) {
+            $rootScope.detail = false;
             var tag = $routeParams.tag;
             var author = $routeParams.author;
 
@@ -63,9 +63,9 @@ angular.module('app.controllers', [])
 
         }])
 
-    .controller('BlogDetailCtrl', ['$scope', '$routeParams', 'blogService',
-        function ($scope, $routeParams, blogService) {
-            $scope.$parent.$parent.detail = true;
+    .controller('BlogDetailCtrl', ['$scope', '$routeParams', '$rootScope', 'blogService',
+        function ($scope, $routeParams, $rootScope, blogService) {
+            $rootScope.detail = true;
             var slug = $routeParams.slug;
 
             if (blogService.blog_list == undefined) {

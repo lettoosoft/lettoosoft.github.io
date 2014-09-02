@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lettoo" href="/rss/">
     <link rel="canonical" href="http://lettoosoft.github.io"/>
 </head>
-<body ng-class="{'post-template home-template':detail}" ng-controller='AppCtrl'>
+<body ng-class="{'post-template':detail, 'home-template':!detail}" ng-controller='AppCtrl'>
 <div ng-view></div>
 
 <footer class="site-footer clearfix">
