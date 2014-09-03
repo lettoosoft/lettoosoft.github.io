@@ -66,5 +66,22 @@
         "post_date": "2014-09-03",
         "summary": "每天只工作4小时的可能性有多大？那么，每周只工作4小时的可能性又有多大？",
         "content_md_url": "content/20140903/the_4_hours_workweek.md"
+    },
+    {
+        "id": 5,
+        "category": "做人",
+        "title": "做更好的父母",
+        "slug": "to-be-better-parent",
+        "author": {
+            "slug":"jeffrey-hu",
+            "name": "Jeffrey Hu",
+            "avatar_url": "//www.gravatar.com/avatar/b02772de5f241e1ead0d812d6d63b57b?d=404&amp;s=250",
+            "email": "zhiwehu@gmail.com",
+            "link": "//github.com/zhiwehu"
+        },
+        "tags": ["育儿"],
+        "post_date": "2014-09-03",
+        "summary": "儿童是父母的影像，父母怎么做，就是直接或者间接的影响到孩子怎么做。如果希望自己的孩子乐观，自己就得乐观；如果希望自己的孩子坚强勇敢，自己就要坚强勇敢。",
+        "content_md_url": "content/20140903/to_be_better_parent.md"
     }
 ]
