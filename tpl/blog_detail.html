@@ -62,7 +62,11 @@
                 </a>
             </section>
 
-            <div disqus="blog.id"></div>
+            <dir-disqus disqus-shortname="lettoo"
+                        disqus-identifier="{{ blog.id }}"
+                        disqus-url="https://lettoosoft.github.io/#!/{{ blog.slug }}"
+                        ready-to-bind="{{ contentLoaded }}">
+            </dir-disqus>
 
         </footer>
 
