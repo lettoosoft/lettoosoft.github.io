@@ -1,5 +1,3 @@
-
-
 <main class="content" role="main" ng-controller="BlogDetailCtrl">
 
     <article class="post">
@@ -10,11 +8,11 @@
                 <time class="post-date" datetime="{{blog.post_date}}">{{blog.post_date}}</time>
                 <span ng-show="blog.tags.length>0">Tags:</span>
                 <span ng-repeat="tag in blog.tags">
-                    <a href="#/tag/{{tag}}">{{tag}}</a>&nbsp;
+                    <a href="#!/tag/{{tag}}">{{tag}}</a>&nbsp;
                 </span>
 
                 <span>Category:</span>
-                <a href="#/category/{{blog.category}}">{{blog.category}}</a>&nbsp;
+                <a href="#!/category/{{blog.category}}">{{blog.category}}</a>&nbsp;
             </section>
         </header>
 
@@ -27,7 +25,7 @@
 
 
             <figure class="author-image">
-                <a class="img" href="#/author/{{blog.author.slug}}/"
+                <a class="img" href="#!/author/{{blog.author.slug}}/"
                    style="background-image: url({{blog.author.avatar_url}})">
                     <span class="hidden">{{blog.auth.name}}</span>
                 </a>
@@ -35,10 +33,10 @@
 
             <section class="author">
                 <h4>
-                    <a href="#/author/{{blog.author.slug}}/">{{blog.author.name}}</a>
+                    <a href="#!/author/{{blog.author.slug}}/">{{blog.author.name}}</a>
                 </h4>
 
-                <p>Read <a href="#/author/{{blog.author.slug}}/">more posts</a> by this author.</p>
+                <p>Read <a href="#!/author/{{blog.author.slug}}/">more posts</a> by this author.</p>
 
                 <div class="author-meta">
                 </div>
@@ -48,21 +46,27 @@
             <section class="share">
                 <h4>Share this post</h4>
                 <a class="icon-twitter"
-                   href="https://twitter.com/share?text=hello&amp;url=http://lettoosoft.github.io/#/{{blog.slug}}/"
+                   href="https://twitter.com/share?text=hello&amp;url={{app.web_url}}/#!/{{blog.slug}}"
                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook"
-                   href="https://www.facebook.com/sharer/sharer.php?u=http://lettoosoft.github.io/#/{{blog.slug}}/"
+                   href="https://www.facebook.com/sharer/sharer.php?u={{app.web_url}}/#!/{{blog.slug}}"
                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
                 <a class="icon-google-plus"
-                   href="https://plus.google.com/share?url=http://lettoosoft.github.io/#/{{blog.slug}}/"
+                   href="https://plus.google.com/share?url={{app.web_url}}/#!/{{blog.slug}}"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
+
+            <dir-disqus disqus-shortname="lettoo"
+                    disqus-identifier="{{ blog.id }}"
+                    disqus-url="{{app.web_url}}/{{ blog.slug }}"
+                    ready-to-bind="{{ contentLoaded }}">
+        </dir-disqus>
 
         </footer>
 

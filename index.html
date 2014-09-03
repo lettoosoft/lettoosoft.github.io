@@ -34,7 +34,7 @@
             <h2 class="page-description">{{app.sub_title}}</h2>
 
             <nav class="category">
-                <a ng-repeat="category in category_list | orderBy:'-count'" href="#/category/{{category.title}}">{{category.title}} ({{category.count}})</a>
+                <a ng-repeat="category in category_list | orderBy:'-count'" href="#!/category/{{category.title}}">{{category.title}} ({{category.count}})</a>
             </nav>
         </div>
     </div>

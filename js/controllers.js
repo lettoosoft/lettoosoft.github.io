@@ -77,9 +77,11 @@ angular.module('app.controllers', [])
         function ($scope, $routeParams, $rootScope, blogService) {
             $rootScope.detail = true;
             var slug = $routeParams.slug;
+            $scope.contentLoaded = false;
 
             blogService.get_blog(slug).then(function(blog){
                 $scope.blog = blog;
+                $scope.contentLoaded = true;
             });
 
             $scope.content_md_url = function (blog) {

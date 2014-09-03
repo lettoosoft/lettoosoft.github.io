@@ -14,12 +14,13 @@ var app = angular.module('app', [
 app.config(
     [
         '$routeProvider',
-        function ($routeProvider) {
-            return $routeProvider
+        '$locationProvider',
+        function ($routeProvider, $locationProvider) {
+            $routeProvider
                 .when('/', {
                     templateUrl: 'tpl/blog_list.html'
                 })
-                .when('/:slug/', {
+                .when('/:slug', {
                     templateUrl: 'tpl/blog_detail.html'
                 })
                 .when('/tag/:tag', {
@@ -34,6 +35,7 @@ app.config(
                 .otherwise({
                     redirectTo: '/'
                 });
+            $locationProvider.html5Mode(false).hashPrefix('!');
         }
     ]
 );
