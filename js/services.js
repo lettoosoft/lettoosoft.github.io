@@ -7,13 +7,13 @@ angular.module('app.services', [])
         var service = {};
 
         service.get_blog_list = function () {
-            return $http.get('/content/blog.json').then(function (resp) {
+            return $http.get('content/blog.json').then(function (resp) {
                 return resp.data;
             });
         };
 
         service.get_blog = function (slug) {
-            return $http.get('/content/blog.json').then(function (resp) {
+            return $http.get('content/blog.json').then(function (resp) {
                 var blog_list = resp.data;
                 for (var i in blog_list) {
                     if (blog_list[i].slug == slug) {
@@ -24,7 +24,7 @@ angular.module('app.services', [])
         };
 
         service.get_tag_blog_list = function (tag) {
-            return $http.get('/content/blog.json').then(function (resp) {
+            return $http.get('content/blog.json').then(function (resp) {
                 var result = [];
                 var blog_list = resp.data;
                 for (var i in blog_list) {
@@ -37,7 +37,7 @@ angular.module('app.services', [])
         };
 
         service.get_author_blog_list = function (author) {
-            return $http.get('/content/blog.json').then(function (resp) {
+            return $http.get('content/blog.json').then(function (resp) {
                 var result = [];
                 var blog_list = resp.data;
                 for (var i in blog_list) {
@@ -50,7 +50,7 @@ angular.module('app.services', [])
         };
 
         service.get_category_blog_list = function (category) {
-            return $http.get('/content/blog.json').then(function (resp) {
+            return $http.get('content/blog.json').then(function (resp) {
                 var result = [];
                 var blog_list = resp.data;
                 for (var i in blog_list) {
@@ -63,7 +63,7 @@ angular.module('app.services', [])
         };
 
         service.get_category_list = function () {
-            return $http.get('/content/blog.json').then(function (resp) {
+            return $http.get('content/blog.json').then(function (resp) {
                 var category_list = [];
                 var blog_list = resp.data;
                 for (var i in blog_list) {
