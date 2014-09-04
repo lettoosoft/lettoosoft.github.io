@@ -62,9 +62,9 @@
                 </a>
             </section>
 
-            <dir-disqus disqus-shortname="lettoo"
+            <dir-disqus disqus-shortname="{{app.disqus-shortname}}"
                         disqus-identifier="{{ blog.id }}"
-                        disqus-url="https://lettoosoft.github.io/#!/{{ blog.slug }}"
+                        disqus-url="https:{{app.web_url}}/#!/{{ blog.slug }}"
                         ready-to-bind="{{ contentLoaded }}">
             </dir-disqus>
 

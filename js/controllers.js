@@ -7,7 +7,9 @@ angular.module('app.controllers', [])
         $scope.app = {
             title: 'Lettoo',
             sub_title: 'Thoughts, stories and ideas.',
-            web_url: '//lettoosoft.github.io'
+            web_url: '//lettoosoft.github.io',
+            disqus_shortname: 'lettoo',
+
         };
 
         blogService.get_category_list().then(function(category_list){
